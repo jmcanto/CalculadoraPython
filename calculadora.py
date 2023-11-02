@@ -14,20 +14,16 @@ def multiplicacion(num1, num2):
 def division(num1, num2):
     return num1 / num2
 
-
 print("Operacion:")
 print("1. Suma")
 print("2. Resta")
 print("3. Multiplicación")
 print("4. División")
-
 opcion = input("Indique una opción (1/2/3/4): ")
 
-# Solicitar al usuario que ingrese los números
 num1 = float(input("Primer número: "))
 num2 = float(input("Segundo número: "))
 
-# Realizar la operación seleccionada
 if opcion == '1':
     print(num1, "+", num2, "=", suma(num1, num2))
 
