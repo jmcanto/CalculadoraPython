@@ -1,6 +1,6 @@
 FROM alpine:3.12
 RUN apt-get update &&
-    apt-get -y install python
+    apt-get install -y python
 
 WORKDIR /calculadora
 COPY .  /calculadora
