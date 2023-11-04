@@ -1,6 +1,6 @@
-FROM alpine:3.12
-RUN apt-get update &&
-    apt-get install -y python
+FROM alpine:latest
 
 WORKDIR /calculadora
 COPY .  /calculadora
+
+RUN apk  --update add python3
