@@ -1,3 +1,5 @@
+import argparse
+
 # suma de 2 números
 def suma(num1, num2):
     return num1 + num2
@@ -13,6 +15,14 @@ def multiplicacion(num1, num2):
 # división de 2 números
 def division(num1, num2):
     return num1 / num2
+
+
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument("-o", "--operacion", help="Tipo de Operacion")
+parser.add_argument("-n1", "--numero1", help="Primer operador")
+parser.add_argument("-n2", "--numero2", help="Segundo operador")
+args = parser.parse_args()
 
 print("Operacion:")
 print("1. Suma")
