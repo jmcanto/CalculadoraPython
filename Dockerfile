@@ -1,10 +1,17 @@
 FROM alpine:latest
-env operacion = 3
-env operador1 = 40
-env operador2 = 656
+
 # después de actualizar y instalar python se borra la caché de los paquetes
-RUN apk update && apk add python3 && rm -rf /var/cache/apt/*
+RUN apk update && \
+apk add --no-cache python3 py3-pip && \
+python3 -m ensurepip && \
+pip3 install --no-cache --upgrade pip setuptools
 
 WORKDIR /calculadora
 COPY .  /calculadora
-CMD ["python", "./calculadora.py", "-o", $operacion, "-n1", $operador1, "-n2", $operador2]
+
+#variables de entorno a utilizar
+ENV operacion 3
+ENV operador1 40
+ENV operador2 656
+
+ENTRYPOINT ["python3","./calculadora.py"]
